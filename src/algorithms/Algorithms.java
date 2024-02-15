@@ -11,18 +11,7 @@ public class Algorithms {
     static Scanner console = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int a = 0, b = 1, c = a + b, n;
-
-        System.out.println("Enter position of number: ");
-        n = console.nextInt();
-
-        for (int i = n - 2; i > 0; i--) {
-            a = b;
-            b = c;
-            c = b + a;
-        }
-
-        System.out.println("The number at position " + n + " of a fibonacci series is " + c);
+        numberAtPositionOfFibonacciSeries();
     }
 
     public static void factorialOfNumber() {
@@ -249,13 +238,23 @@ public class Algorithms {
         System.out.println("Enter position of number: ");
         n = console.nextInt();
 
-        for (int i = n - 2; i > 0; i--) {
-            a = b;
-            b = c;
-            c = b + a;
-        }
+        switch (n) {
+            case 1 ->
+                System.out.println("The number at position " + n + " of a fibonacci series is " + a);
+            case 2 ->
+                System.out.println("The number at position " + n + " of a fibonacci series is " + b);
+            case 3 ->
+                System.out.println("The number at position " + n + " of a fibonacci series is " + c);
+            default -> {
+                for (int i = n - 3; i > 0; i--) {
+                    a = b;
+                    b = c;
+                    c = b + a;
+                }
 
-        System.out.println("The number at position " + n + " of a fibonacci series is " + c);
+                System.out.println("The number at position " + n + " of a fibonacci series is " + c);
+            }
+        }
     }
 
 }
