@@ -1,4 +1,3 @@
-
 package algorithms;
 
 import java.util.Scanner;
@@ -12,12 +11,18 @@ public class Algorithms {
     static Scanner console = new Scanner(System.in);
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 5; i++) {
-            for (int j = 1; j <= 5; j++) {
-                System.out.print(j + " ");
-            }
-            System.out.println("");
+        int a = 0, b = 1, c = a + b, n;
+
+        System.out.println("Enter position of number: ");
+        n = console.nextInt();
+
+        for (int i = n - 2; i > 0; i--) {
+            a = b;
+            b = c;
+            c = b + a;
         }
+
+        System.out.println("The number at position " + n + " of a fibonacci series is " + c);
     }
 
     public static void factorialOfNumber() {
@@ -236,6 +241,21 @@ public class Algorithms {
             b = c;
             c = b + a;
         }
+    }
+
+    public static void numberAtPositionOfFibonacciSeries() {
+        int a = 0, b = 1, c = a + b, n;
+
+        System.out.println("Enter position of number: ");
+        n = console.nextInt();
+
+        for (int i = n - 2; i > 0; i--) {
+            a = b;
+            b = c;
+            c = b + a;
+        }
+
+        System.out.println("The number at position " + n + " of a fibonacci series is " + c);
     }
 
 }
